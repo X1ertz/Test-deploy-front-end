@@ -1,0 +1,706 @@
+.overflow{
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.product-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+  margin: 20px 0;
+  width: 100%;
+  margin-left: 6%;
+  
+}
+.nav-linkss {
+  list-style: none;
+  margin-top: 0px;
+  padding: 0;
+  display: flex;
+  gap: 100px;
+  margin-top: 30px;
+  margin-left: 0%;
+}
+.card {
+  width: calc(15% - 16px);
+  height: 450px;
+  perspective: 1000px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+  
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.999s;
+    flex-grow: 1;
+  }
+  
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 95%;
+    backface-visibility: hidden;
+    
+  }
+  
+  .card-front {
+    background-color: rgba(241, 241, 241, 0.42); 
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(0deg);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+  
+  
+  .card-back {
+    color: #fff;
+    font-size: 24px;
+    transform: rotateY(180deg);
+    padding: 10px 10px;
+    height: 370px;
+    color: #000000;
+  } 
+  .product-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: -10px;
+  }
+  
+  .product-price {
+    margin-top: -18px;
+    font-size: 16px;
+    color: #6A2C70;
+  }
+  .card-details{
+    text-align: left;
+
+    width: 250px;
+  }
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  :focus {
+    outline: 0;
+    border-color: #2260ff;
+    box-shadow: 0 0 0 4px #b5c9fc;
+  }
+  
+  .mydict {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    justify-content: center;
+  }
+  
+  .mydict input[type="radio"] {
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  
+  .mydict input[type="radio"]:checked + span {
+    box-shadow: 0 0 0 0.0625em #0043ed;
+    background-color: #dee7ff;
+    z-index: 1;
+    color: #0043ed;
+  }
+  
+  .label1 .span1 {
+    display: block;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 0.375em .75em;
+    position: relative;
+    margin-left: .0625em;
+    box-shadow: 0 0 0 0.0625em #b5bfd9;
+    letter-spacing: .05em;
+    color: #3e4963;
+    text-align: center;
+    transition: background-color .5s ease;
+  }
+  .qtyinput{
+    border:1px solid #000000;
+    width: 15%;
+    height: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(245%, 0%);
+  }
+.cart-btn {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  margin-left: 5%;
+ }
+ 
+ .shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform
+     600ms
+     cubic-bezier(.3, .7, .4, 1);
+ }
+ 
+ .edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  border-radius: 12px;
+  background: linear-gradient(
+     to left,
+     hsl(340deg 100% 16%) 0%,
+     hsl(340deg 100% 32%) 8%,
+     hsl(340deg 100% 32%) 92%,
+     hsl(340deg 100% 16%) 100%
+   );
+ }
+ 
+ .front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform
+     600ms
+     cubic-bezier(.3, .7, .4, 1);
+ }
+ 
+ .cart-btn :hover {
+  filter: brightness(110%);
+ }
+ 
+ .cart-btn :hover .front {
+  transform: translateY(-6px);
+  transition: transform
+     250ms
+     cubic-bezier(.3, .7, .4, 1.5);
+ }
+ 
+ .cart-btn :active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+ }
+ 
+ .cart-btn :hover .shadow {
+  transform: translateY(4px);
+  transition: transform
+     250ms
+     cubic-bezier(.3, .7, .4, 1.5);
+ }
+ 
+ .cart-btn :active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+ }
+ 
+ .cart-btn :focus:not(:focus-visible) {
+  outline: none;
+ }
+.head{
+  width: 100%;
+  height: 1000px;
+  background-image: linear-gradient(to left, #efe9d5, #b0c0ac, #739890, #416e79, #27445d);
+  overflow: hidden;
+}
+.banner{
+width: 80%;
+height: 1000px;
+margin-top: 0%;
+margin-left: 10%;
+overflow-y: none;
+}
+.header{  
+  width: 100%;
+  height: 50px;
+  background-color: #EFE9D5;
+}
+
+.section {
+  padding: 40px 20px
+  
+}
+.section-titlex {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+
+}
+.partners-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.partner {
+  text-align: center;
+}
+.partner img {
+  max-width: 120px;
+  height: auto;
+}
+.partner p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.section-titlex{
+  top: 50%;
+    left: 50%; 
+    transform: translate(45.5%, 50%);
+    margin-bottom: 30px;
+}
+.desc{
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.banner2{
+  width: 100%;
+  height: 700px;
+
+}
+.F1{
+  background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(0%, 50%);
+    
+}
+.neon-text {
+  font-size: 3rem;
+  color: #000000;
+  text-align: center;
+}
+.wishlist-btn {
+  background-color: transparent;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 20px;
+}
+
+.wishlist-btn:hover {
+  background-color: #f5f5f5;
+  border-color: #ccc;
+}
+
+.wishlist-btn:focus {
+  outline: none;
+}
+
+.wishlist-btn svg {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.wishlist-btn svg:hover {
+  color: #ff6347;
+}
+
+
+.input-containerx {
+  margin-left: 80%;
+  width: 220px;
+  position: relative;
+}
+
+.iconx {
+  position: absolute;
+  right: 10px;
+  top: calc(50% + 5px);
+  transform: translateY(calc(-50% - 5px));
+}
+
+.inputx {
+  width: 100%;
+  height: 20px;
+  padding: 10px;
+  transition: .2s linear;
+  border: 2.5px solid black;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.inputx:focus {
+  outline: none;
+  border: 0.5px solid black;
+  box-shadow: -5px -5px 0px black;
+}
+
+.input-containerx:hover > .icon {
+  animation: anim 1s linear infinite;
+}
+
+@keyframes anim {
+  0%,
+  100% {
+    transform: translateY(calc(-50% - 5px)) scale(1);
+  }
+
+  50% {
+    transform: translateY(calc(-50% - 5px)) scale(1.1);
+  }
+}
+.shop-now{
+  position: absolute;
+  top: 65%;
+  left: 57%;
+  transform: translate(50%, -50%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  text-align: center;
+  z-index: 10;
+  
+}
+.btn-shop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22rem;
+  overflow: hidden;
+  height: 4rem;
+  background-size: 300% 300%;
+  cursor: pointer;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#212121, #212121),
+    linear-gradient(
+      137.48deg,
+      #ffdb3b 10%,
+      #fe53bb 45%,
+      #8f51ea 67%,
+      #0044ff 87%
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+#container-stars {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+}
+
+strong {
+  z-index: 2;
+  font-family: "Avalors Personal Use";
+  font-size: 18px;
+  letter-spacing: 5px;
+  color: #ffffff;
+  text-shadow: 0 0 4px white;
+}
+
+#glow {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+.circle {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: pulse_3011 4s infinite;
+  z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+  background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+  background: rgba(142, 81, 234, 0.704);
+}
+
+.btn-shop:hover #container-stars {
+  z-index: 1;
+  background-color: #212121;
+}
+
+.btn-shop:hover {
+  transform: scale(1.1);
+}
+
+.btn-shop:active {
+  border: double 4px #fe53bb;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+.btn-shop:active .circle {
+  background: #fe53bb;
+}
+
+#stars {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+#stars::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+#stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-135rem);
+  }
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+.sponsor{
+  margin-top: 20%;
+}
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .shop-now{
+    position: absolute;
+    top: 80%;
+    left: 65%;
+    transform: translate(-100%, 200%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 10;
+  }
+  .banner{
+    width: 100%;
+    height: 1000px;
+    margin-top: 0%;
+    margin-left: 0%;
+    }
+  .card {
+      width: calc(30% - 16px);
+      height: 600px;
+      perspective: 1000px;
+      display: flex;
+      flex-direction: column;
+    
+  }
+  .cart-btn {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    touch-action: manipulation;
+    width: 90%;
+    margin-left: 7%;
+   }
+   .banner2{
+    width: 100%;
+    height: 1000px;
+  
+  }
+  .section-title{
+    top: 50%; 
+      left: 50%; 
+      transform: translate(48%, 50%);
+      margin-bottom: 30px;
+  }
+  .input-containerx {
+    margin-left: 75%;
+    width: 250px;
+    position: relative;
+  }
+  
+
+  
+}
+@media (min-width: 700px) and (max-width: 1024px) {
+  .shop-now{
+  display: none;
+  }
+  .banner{
+    width: 100%;
+    height: 500px;
+    margin-top: 0%;
+    margin-left: 0%;
+    }
+    .head{
+      width: 100%;
+      height: 500px;
+      background-image: linear-gradient(to left, #efe9d5, #b0c0ac, #739890, #416e79, #27445d);
+      overflow: hidden;
+    }
+  .card {
+      width: calc(46% - 16px);
+      height: 600px;
+      perspective: 1000px;
+      display: flex;
+      flex-direction: column;
+    
+  }
+  .cart-btn {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    touch-action: manipulation;
+    width: 90%;
+    margin-left: 7%;
+   }
+   .banner2{
+    width: 100%;
+    height: 500px;
+  
+  }
+  .section-titlex{
+    margin-left: -15%;
+  }
+  .input-containerx {
+    margin-left: 30%;
+    width: 250px;
+    position: relative;
+  }
+
+
+  .nav-linkss {
+    list-style: none;
+    margin-top: 0px;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+  }
+
+  
+}

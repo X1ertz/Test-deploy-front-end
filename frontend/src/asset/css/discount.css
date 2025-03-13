@@ -1,0 +1,141 @@
+
+.discount-management-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .discount-management-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+
+  .discount-list-header, .used-discount-list-header {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+
+  .add-discount-btn, .add-used-discount-btn {
+    background-color: #007bff;
+    margin-bottom: 10px;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  
+
+  .edit-discount-btn, .edit-used-discount-btn {
+    background-color: #ffc107;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-right: 10px;
+    transition: 0.3s ease-in-out;
+  }
+  
+
+  .delete-discount-btn, .delete-used-discount-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.3s ease-in-out;
+  }
+  
+
+  .discount-list-table, .used-discount-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .discount-id-header, .discount-name-header, .discount-percentage-header, .discount-used-header, .discount-actions-header,
+  .used-discount-id-header, .used-discount-userid-header, .used-discount-code-header, .used-discount-actions-header {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background-color: #f2f2f2;
+  }
+  
+  .discount-id, .discount-name, .discount-percentage, .discount-usage, .discount-actions,
+  .used-discount-id, .used-discount-userid, .used-discount-code, .used-discount-actions {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .discount-modal, .used-discount-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    z-index: 9999;
+  }
+  
+  .modal-label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .modal-input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .modal-save-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  .modal-cancel-btn{
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(170, 0, 0);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+
+  @media (max-width: 600px) {
+    .discount-management-container {
+      padding: 15px;
+    }
+    
+    table {
+      font-size: 14px;
+    }
+  
+    button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  

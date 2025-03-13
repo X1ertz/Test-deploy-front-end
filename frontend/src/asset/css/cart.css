@@ -1,0 +1,354 @@
+.cart-container {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.cart-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.cart-item-details h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.cart-item-details p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-item-actions input {
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.cart-summary {
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.cart-summary h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+
+.discount-btn {
+  --color: #0077ff;
+  font-family: inherit;
+  display: inline-block;
+  width: 6em;
+  height: 2.6em;
+  line-height: 2.5em;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 20px;
+  font-size: 17px;
+  z-index: 1;
+  color: var(--color);
+  border: 2px solid var(--color);
+  border-radius: 6px;
+  position: relative;
+}
+
+.discount-btn::before {
+  position: absolute;
+  content: "";
+  background: var(--color);
+  width: 150px;
+  height: 200px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.discount-btn:hover {
+  color: white;
+}
+
+.discount-btn:before {
+  top: 100%;
+  left: 100%;
+  transition: 0.3s all;
+}
+
+.discount-btn:hover::before {
+  top: -30px;
+  left: -30px;
+}
+
+.discount-btn1 {
+  color: #090909;
+  padding: 0.5em 0.8em;
+  margin-left: 20px;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+.discount-btn1:active {
+  color: #cfcfcf;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+.button-back {
+  width: 50px;
+  height: 50px;
+  margin-left: 17px;
+  border: none;
+  outline: none;
+  background-color: #ffffff;
+  color: #ffffff;
+  border-radius: 100%;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  border: 2.5px solid #0077ff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.button-back:hover {
+  transform: translateY(-3px);
+  background-color: #0077ff;
+}
+
+.button-span1 {
+  color: #0077ff;
+}
+.button-span1:hover{
+  color: rgb(255, 255, 255);
+}
+.checkout-btn {
+  position: relative;
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #22c55e; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.checkout-btn:hover {
+  background: #16a34a; 
+  transform: scale(1.1); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.checkout-btn:active {
+  transform: scale(1); 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-btn:disabled {
+  background: #b2f5ea; 
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+
+@keyframes buttonPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.checkout-btn:hover {
+  animation: buttonPulse 1s infinite; 
+}
+
+.select input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.select {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: 30px;
+  user-select: none;
+}
+
+.select .checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 0.6em;
+  width: 0.6em;
+  border-radius: 50%;
+  background: #000000a6;
+  transition: all 0.2s ease;
+  display: inline-block;
+  opacity: 0.6;
+}
+
+.select .checkmark {
+  opacity: 0.4;
+}
+
+.select input:checked ~ .checkmark {
+  background: linear-gradient(144deg, #22c55e, #16a34a 50%, #10b981);
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+
+.select .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.select input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.select .checkmark:after {
+  left: 0.20em;
+  top: 0.10em;
+  width: 0.1em;
+  height: 0.2em;
+  border: solid rgb(255, 255, 255);
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+.discountbar {
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #e8e8e8;
+  box-shadow: 20px 20px 60px #c5c5c5,
+     -20px -20px 60px #ffffff;
+  transition: 0.3s;
+ }
+ 
+ .discountbar:focus {
+  outline-color: #e8e8e8;
+  background: #e8e8e8;
+  box-shadow: inset 20px 20px 60px #c5c5c5,
+     inset -20px -20px 60px #ffffff;
+  transition: 0.3s;
+ }
+ .discount-wrapper input {
+  background-color: #eee;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 13em;
+  border-radius: 1rem;
+  color: lightcoral;
+  box-shadow: 0 0.4rem #dfd9d9;
+  cursor: pointer;
+  margin-left: 2rem;
+  margin-right: 20px;
+}
+
+.input-discount:focus {
+  color: black;
+  outline-color: lightcoral;
+}
+.remove-item {
+  background-color: #ff4d4d; 
+  color: white; 
+  border: none; 
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer; 
+  border-radius: 5px;
+  transition: background-color 0.3s ease; 
+}
+
+.remove-item:hover {
+  background-color: #e60000; 
+}
+
+.remove-item:focus {
+  outline: none; 
+}
+.apply-discount-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.apply-discount-btn:hover {
+  background-color: #45a049;
+}
+
+.apply-discount-btn:active {
+  background-color: #388e3c;
+}
